@@ -8,6 +8,8 @@
 4. [Cambiar contenido HTML con getElementById()](#cambiar-contenido-html-con-getelementbyid)
 5. [For](#for)
 6. [Window](#window)
+7. [Template Literal](#template-literal)
+8. [Convertir a STRING o NUMBER](#convertir-a-string-o-number)
 ---
 
 
@@ -78,14 +80,44 @@ getElementById() → El siguiente ejemplo "busca" un elemento HTML (con id="demo
 
 ## **For**
 ---
+Los Loops, los necesitamos para crear un bucle tanta veces como le indiquemos.
 
 ```
-// sumar los valores del 1 al 10
+for (inicio; condición; incremento){
+    // instrucción
+}
+```
+```
+for (let i = 0; i < 100; i++){
+  console.log('hello world!')
+}
+```
+```
+let alumnos = ['Pepe', 'Paco', 'Ana', 'Luisa', 'Juan'];
+let contenido = "Lista de alumnos:\n";
+
+for (let index = 0; index < alumnos.length; index++) {
+    contenido += `${index} ${alumnos[index]} \n`;
+};
+
+console.log(contenido);
+/*
+Lista de alumnos:
+0  Pepe 
+1  Paco 
+2  Ana 
+3  Luisa 
+4  Juan 
+*/
+```
+
+```
+// Sumar los valores del 1 al 10
 let suma = 0
 for (let i = 1; i <= 10; i++) {
     suma += i
 }
-console.log('La suma de los numeros del 1 al 10 es: ' + suma)
+console.log(`La suma de los números del 1 al 10 es: ${suma}`) // 55
 ```
 
 ## **Window**
@@ -118,8 +150,23 @@ alert( `Hola ${"name"}`); // Hola Quim
 
 ## **Convertir a STRING o NUMBER**
 ---
+Escribimos String, Number para covertir valores.
 
+```
+let value = true;
+alert(typeof value); // boolean
 
+value = String(value); // ahora value es el string "true"
+alert(typeof value); // string
+```
+
+Nota:
+Los string "afectados" por un operador lógico serán convertidos a números.
+```
+alert( "6" / "2" ); // 3, los strings son convertidos a números
+```
+
+##
 
 
 
