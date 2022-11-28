@@ -6,10 +6,13 @@
 2. [Tipos de datos](#tipos-de-datos)
 3. [typeOf](#typeof)
 4. [Cambiar contenido HTML con getElementById()](#cambiar-contenido-html-con-getelementbyid)
-5. [For](#for)
-6. [Window](#window)
-7. [Template Literal](#template-literal)
-8. [Convertir a STRING o NUMBER](#convertir-a-string-o-number)
+5. [for](#for)
+6. [while](#while)
+7. [window](#window)
+8. [do...while](#do-while)
+9
+10. [Template Literal](#template-literal)
+11. [Convertir a STRING o NUMBER](#convertir-a-string-o-number)
 ---
 
 
@@ -78,15 +81,25 @@ getElementById() → El siguiente ejemplo "busca" un elemento HTML (con id="demo
 ```
 ![getElementById](./img/getElementById_01.png)
 
-## **For**
+## **for**
 ---
-Los Loops, los necesitamos para crear un bucle tanta veces como le indiquemos.
+Los *loops*, los necesitamos para crear un bucle tanta veces como queramos. Es habitual repetir acciones y de ahí los *loops*.
 
 ```
 for (inicio; condición; incremento){
     // instrucción
 }
 ```
+**inicio** → És una variable declarada que hará de contador.
+
+**condición** → El *loop* se ejecuta mientras la condición se cumple.Determinará el número de veces que se ejecuta.
+
+**incremento** → Actualiza el valor incrementando o reduciendo el contador.
+
+**intrucción** → Mientras la *condición* sea `true`, se ejecutará la *intrucción*.
+
+
+
 ```
 for (let i = 0; i < 100; i++){
   console.log('hello world!')
@@ -120,7 +133,46 @@ for (let i = 1; i <= 10; i++) {
 console.log(`La suma de los números del 1 al 10 es: ${suma}`) // 55
 ```
 
-## **Window**
+## **while**
+---
+Mientras la condición `condition` sea verdadera, el código del cuerpo del bucle será ejecutado.
+
+```
+while (condition) {
+  // Código
+  // Llamada "cuerpo del bucle"
+}
+```
+
+Por ejemplo, el bucle siguiente imprime `i` mientras se cumpla `i < 3`:
+
+```
+let i = 0;
+while (i < 3) { // Muestra 0, luego 1, luego 2
+  alert( i );
+  i++;
+}
+```
+
+## **do while**
+---
+Similar a `while` solo que nos aseguramos que almenos de ejecute una vez.
+```
+do {
+  // cuerpo del bucle
+} while (condition);
+```
+
+```
+let counter = 0
+
+do {
+    console.log('hello world!')
+    counter++
+} while (counter < 10) // Muestra 10 mensajes de "hello world!"
+```
+
+## **window**
 ---
 Podemos utilizar el **objeto especial** window para acceder directamente al ámbito global independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto window (la pestaña actual del navegador web).
 
