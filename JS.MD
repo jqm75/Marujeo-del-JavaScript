@@ -2,20 +2,22 @@
 
 ## Índice
 
-1. [Variables](#variables)
-2. [Tipos de datos](#tipos-de-datos)
-3. [typeOf](#typeof)
-4. [Cambiar contenido HTML con getElementById()](#cambiar-contenido-html-con-getelementbyid)
-5. [for](#for)
-6. [while](#while)
-7. [window](#window)
-8. [do while](#do-while)
-9. [forEach](#foreach)
-10. [for of](#for-of)
-11. [for in](#for-in)
-12. [break](#break)
-13. [Template Literal](#template-literal)
-14. [Convertir a STRING o NUMBER](#convertir-a-string-o-number)
+ 
+  - [**Variables**](#variables)
+  - [**Tipos de datos**](#tipos-de-datos)
+  - [**typeOf**](#typeof)
+  - [**Cambiar contenido HTML con getElementById()**](#cambiar-contenido-html-con-getelementbyid)
+  - [**for**](#for)
+  - [**while**](#while)
+  - [**do while**](#do-while)
+  - [**forEach**](#foreach)
+  - [**for of**](#for-of)
+  - [**for in**](#for-in)
+  - [**break**](#break)
+  - [**Arrays**](#array)
+  - [**window**](#window)
+  - [**Template literal**](#template-literal)
+  - [**Convertir a STRING o NUMBER**](#convertir-a-string-o-number)
 ---
 
 
@@ -176,7 +178,16 @@ do {
 ```
 ## **forEach**
 ----
-`forEach`es un método de **array**, muy común, y sirve para recorrer un array sin escribir una estructura.
+`forEach` es un método de **array**, muy común, y sirve para recorrer un array sin escribir una estructura.
+A menudo te verás con la necesidad de iterar a través de una colección de *arrays* y ejecutar un método *callback* por cada una de las iteraciones. Y para realizarlo hay un método muy útil: el método `forEach()`.
+
+La función *callback* puede recibir tres parámetros.
+
+- El elemento actual: Este es el elemento del arreglo por el cual se está haciendo la iteración.
+- Su índice: Este es el índice de la posición que tiene el elemento dentro del array.
+- El array objetivo: Este es el array por el cual se está haciendo la iteración.
+
+🚨 Con `forEach` **NO** puedes terminar el bucle con la instrucción `break`.
 
 ```
 let alumnos = ['Pep', 'Cesc', 'Anna', 'Lluisa', 'Joan'];
@@ -187,6 +198,7 @@ alumnos.forEach(function(alumno, position) {
 })
 
 console.log(content);
+
 /*
 Listado de alumnos:
 0  Pep 
@@ -209,6 +221,46 @@ let group = {
 };
 
 group.showList();
+
+/* 
+"Our Group: John"
+"Our Group: Pete"
+"Our Group: Alice"
+*/
+```
+
+```
+let numeros = [3, 6, 8, 10, 12]
+let impar = 3;
+
+numeros.forEach(function(numero) {
+    if (numero === impar) {
+        numeros.shift() // 3 será borrado del arreglo
+    }
+})
+
+console.log(numeros);
+
+[6, 8, 10, 12] // Todos son pares!
+```
+En el siguiente ejemplo, vamos a ejecutar la función  `pasarLista` por cada  uno de los estudiantes por los que se recorre el bucle dentro del array. La función `pasarLista` solamente registra en la consola un *string* perteneciente a cada uno de los estudiantes.
+```
+nombres = ["Anna", "Alicia", "Quim", "Guido", "Eva"]
+
+function pasarLista(nombre, indice) {
+    console.log(`Está el numero de estudiante ${indice + 1}  -${nombre} - presente? Sí!`)
+    ;}
+
+numeros.forEach((nombre, indice) => pasarLista(nombre, indice));
+
+
+/*
+"Está el número de estudiante 1  - Anna presente? Sí!"
+"Está el número de estudiante 2  - Alicia presente? Sí!"
+"Está el número de estudiante 3  - Quim presente? Sí!"
+"Está el número de estudiante 4  - Guido presente? Sí!"
+"Está el número de estudiante 5  - Eva presente? Sí!"
+*/
 ```
 ## **for of**
 ----
@@ -249,6 +301,7 @@ La key -> score
 El valor -> 9 
 */
 ```
+
 ## **break**
 ---
 Normalmente, un loop continúa mientras la condición es truey se detendrá el bucle cuando la condición sea false.
@@ -269,7 +322,7 @@ while (true) {
 }
 console.log( 'Sum: ' + sum );
 ```
-
+## **Arrays**
 ## **window**
 ---
 Podemos utilizar el **objeto especial** window para acceder directamente al ámbito global independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto window (la pestaña actual del navegador web).
