@@ -390,7 +390,32 @@ averageResult // 4
 ```
 ## **Arrow Functions**
 ---
+Las *arrow functions* permiten simplificar las funciones mejorando su expresividad.
 
+Hay varias formas de crear una *arrow function*. Por ejemplo, podemos crear una *arrow function* sin necesidad de poner `()` después del `=` siempre y cuando la función no necesite parámetros o solo tenga uno.
+Entonces, la siguiente función:
+```
+function saludar (){
+  const nombre = 'Quim';
+  console.log('Hola');
+}
+saludar(); // "¡Hola Quim!"
+```
+Para crear una *arrow function*, primero quitamos la palabra `function` y como esta función únicamente tiene un parámetro, podemos obviar los `()` y colocar la constante `nombre` seguida del símbolo de la `a.f`, que es este, `=>`.
+
+🚨 Si la `a.f` ocupa solo una línea, esta ya lleva implícito el `return`, por lo que no haría falta escribirlo. También podemos quitar las `{ }`
+
+```
+const saludar = nombre => console.log(`¡Hola ${nombre}!`);
+
+saludar('Quim') // "¡Hola Quim!"
+```
+En este otro ejemplo, la función tiene dos parámetros, y en este caso sí que debemos poner `()`, seguido de `=>` y la instrucción. Tampoco necesita `return` ni `{ }`.
+```
+const sumar = (a,b) => a+b;
+
+console.log(sumar(5,5)); // 10
+```
 ## **window**
 ---
 Podemos utilizar el **objeto especial** window para acceder directamente al ámbito global independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto window (la pestaña actual del navegador web).
