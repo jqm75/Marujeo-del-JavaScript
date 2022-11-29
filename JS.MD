@@ -15,6 +15,8 @@
   - [**for in**](#for-in)
   - [**break**](#break)
   - [**Arrays**](#array)
+  - [**Funciones**](#funciones)
+  - [**Arrow Fuctions**](#arrow-functions)
   - [**window**](#window)
   - [**Template literal**](#template-literal)
   - [**Convertir a STRING o NUMBER**](#convertir-a-string-o-number)
@@ -323,6 +325,72 @@ while (true) {
 console.log( 'Sum: ' + sum );
 ```
 ## **Arrays**
+---
+
+## **Funciones**
+---
+`function` *nombreDeLaFuncion* seguido de `()`. Y entre las *curly braces* `{ }` pondremos las **instrucciones**.
+
+```
+function sayHi() {
+  console.log('Hello!')
+}
+
+sayHi() // "Hello!"
+
+```
+
+### Devuelven valores: `return`
+Una función puede devolver un valor al código de llamada como resultado.
+
+El ejemplo más simple sería una función que suma dos valores:
+
+```
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert( result ); // 3
+```
+```
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('¿Tienes permiso de tus padres?');
+  }
+}
+
+let age = prompt('¿Qué edad tienes?', 18);
+
+if ( checkAge(age) ) {
+  alert( 'Acceso otorgado' );
+} else {
+  alert( 'Acceso denegado' );
+}
+```
+
+
+🚨 Todo el código después del `return`, no se ejecutará. El `return` pone fin a la acción de la función.
+```
+const value1 = 4
+const value2 = 4
+
+function average(){ 
+
+   	let result
+   	result = (value1 + value2) / 2 
+   	return result
+    result = 0 // <- Esta línea nunca se ejecutará.
+}
+
+const averageResult = average()
+averageResult // 4
+```
+## **Arrow Functions**
+---
+
 ## **window**
 ---
 Podemos utilizar el **objeto especial** window para acceder directamente al ámbito global independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto window (la pestaña actual del navegador web).
