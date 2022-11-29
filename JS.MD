@@ -403,14 +403,24 @@ saludar(); // "¡Hola Quim!"
 ```
 Para crear una *arrow function*, primero quitamos la palabra `function` y como esta función únicamente tiene un parámetro, podemos obviar los `()` y colocar la constante `nombre` seguida del símbolo de la `a.f`, que es este, `=>`.
 
-🚨 Si la `a.f` ocupa solo una línea, esta ya lleva implícito el `return`, por lo que no haría falta escribirlo. También podemos quitar las `{ }`
+🚨 Si la `a.f` ocupa solo una línea, esta ya lleva implícito el `return`, por lo que no haría falta escribirlo. También podemos omitir las `{ }`
 
 ```
 const saludar = nombre => console.log(`¡Hola ${nombre}!`);
 
 saludar('Quim') // "¡Hola Quim!"
 ```
-En este otro ejemplo, la función tiene dos parámetros, y en este caso sí que debemos poner `()`, seguido de `=>` y la instrucción. Tampoco necesita `return` ni `{ }`.
+
+```
+const sumar = function (a,b){
+  return a+b;  
+}
+
+console.log(sumar(5,5)); // 10
+```
+Y aquí tenemos lo mismo con una `arrow function`
+La función tiene dos parámetros, y en este caso sí que debemos poner `()`, seguido de `=>` y la instrucción. Tampoco necesita `return` ni `{ }`.
+
 ```
 const sumar = (a,b) => a+b;
 
