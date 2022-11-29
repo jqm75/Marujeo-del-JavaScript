@@ -9,10 +9,13 @@
 5. [for](#for)
 6. [while](#while)
 7. [window](#window)
-8. [do...while](#do-while)
-9
-10. [Template Literal](#template-literal)
-11. [Convertir a STRING o NUMBER](#convertir-a-string-o-number)
+8. [do while](#do-while)
+9. [forEach](#foreach)
+10. [for of](#for-of)
+11. [for in](#for-in)
+12. [break](#break)
+13. [Template Literal](#template-literal)
+14. [Convertir a STRING o NUMBER](#convertir-a-string-o-number)
 ---
 
 
@@ -171,6 +174,101 @@ do {
     counter++
 } while (counter < 10) // Muestra 10 mensajes de "hello world!"
 ```
+## **forEach**
+----
+`forEach`es un método de **array**, muy común, y sirve para recorrer un array sin escribir una estructura.
+
+```
+let alumnos = ['Pep', 'Cesc', 'Anna', 'Lluisa', 'Joan'];
+let content = "Listado de alumnos:\n";
+
+alumnos.forEach(function(alumno, position) {
+    content += `${position} ${alumno} \n`;
+})
+
+console.log(content);
+/*
+Listado de alumnos:
+0  Pep 
+1  Cesc 
+2  Anna 
+3  Lluisa 
+4  Joan 
+*/
+```
+```
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(
+      student => console.log(this.title + ': ' + student)
+    );
+  }
+};
+
+group.showList();
+```
+## **for of**
+----
+`for...of` es otro método de iterar arrays. En este caso, no tenemos acceso al número de veces que hemos iterado, sólo al valor de cada elemento del array.
+```
+let fruits = ["Apple", "Orange", "Plum"];
+
+for (let fruit of fruits) {
+  console.log( fruit );
+}
+
+/*
+"Apple"
+"Orange"
+"Plum"
+*/
+
+```
+## **for in**
+----
+`For...in` es un método en este caso para iterar objetos. Creará una variable que será la key de cada propiedad del objeto.
+
+```
+let film = {title: 'El padrino', director: 'Francis Ford Coppola', year: 1972, score: 9}
+
+for (let key in film) {
+    console.log(`La key -> ${key} \nEl valor -> ${film[key]} `)
+};
+
+/*
+La key -> title 
+El valor -> El padrino 
+La key -> director 
+El valor -> Francis Ford Coppola 
+La key -> year 
+El valor -> 1972 
+La key -> score 
+El valor -> 9 
+*/
+```
+## **break**
+---
+Normalmente, un loop continúa mientras la condición es truey se detendrá el bucle cuando la condición sea false.
+
+Pero podemos forzar que se acabe el bucle utilizando la palabra `break`.
+
+```
+let sum = 0;
+
+while (true) {
+
+  let value = Number(prompt("Enter a number", ''));
+
+  if (!value) break;
+
+  sum += value;
+
+}
+console.log( 'Sum: ' + sum );
+```
 
 ## **window**
 ---
@@ -219,6 +317,3 @@ alert( "6" / "2" ); // 3, los strings son convertidos a números
 ```
 
 ##
-
-
-
