@@ -17,7 +17,7 @@
   - [**Arrays**](#array)
   - [**Funciones**](#funciones)
   - [**Arrow Fuctions**](#arrow-functions)
-  - [**window**](#window)
+  - [**Window**](#window)
   - [**Template literal**](#template-literal)
   - [**Convertir a STRING o NUMBER**](#convertir-a-string-o-number)
 ---
@@ -426,9 +426,9 @@ const sumar = (a,b) => a+b;
 
 console.log(sumar(5,5)); // 10
 ```
-## **window**
+## **Window**
 ---
-Podemos utilizar el **objeto especial** window para acceder directamente al ámbito global independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto window (la pestaña actual del navegador web).
+Podemos utilizar el **objeto especial** `Window` para acceder directamente al ámbito global del DOM independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto Window, es la ventana del navegador web.
 
 ```
 let a = 1;
