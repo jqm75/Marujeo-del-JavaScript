@@ -15,6 +15,8 @@
   - [**for in**](#for-in)
   - [**break**](#break)
   - [**Arrays**](#array)
+  - [**Objetos**](#objetos)
+  - [**Operador Rest y Spread**](#operador-rest-y-spread)
   - [**Funciones**](#funciones)
   - [**Arrow Fuctions**](#arrow-functions)
   - [**Window**](#window)
@@ -326,6 +328,65 @@ console.log( 'Sum: ' + sum );
 ```
 ## **Arrays**
 ---
+Estructura de datos que nos permite almacenar múltiples valores en una misma estructura. Parecido a una lista. Se separa con `,` (comas)
+
+```
+const miArray = [ 'Laia', 4 ];
+console.log(miArray); // [ 'Laia', 4 ]
+
+const estudiantes = [ 'Pol', 'Anna', 'Joan', 'Èlia' ];
+console.log(estudiantes); // [ 'Pol', 'Anna', 'Joan', 'Èlia' ]
+
+const notas = [ 95, 67, 89, 56 ];
+console.log(notas); // [ 95, 67, 89, 56 ]
+```
+
+### Array anidados
+
+```
+const unNombre = [[], []];
+```
+```
+const listaEstudiantes = [['Daniel', 95],['Carmen', 97]];
+console.log(listaEstudiantes)
+```
+## **Arrays**
+---
+## **Operador Rest y Spread**
+---
+
+El operador **Rest** disponible en (JS ES6) sirve para recibir cualquier número de parámetros en una función en forma array.
+
+Si lo declaramos en los *argumetos* de vuelve un array.
+```
+function miFuncion(...args) { // args o cualquier otro nombre.
+  console.log(args);
+}
+
+miFuncion(1, 2, 3, 4); // [1, 2, 3, 4]
+
+```
+O así:
+
+```
+const miFuncion = (...args) => console.log(args);
+
+
+miFuncion(1, 2, 3, 4);  // [1, 2, 3, 4]
+
+```
+Si lo declaramos en la función, realiza acciones dentro del array. Y los descompone el array en sus elementos individuales y asignarlos en orden a los parámetros. Aplicado asó este operador se llama **Spread**
+```
+const numeros = [1, 2, 3];
+
+const sumar = (x, y, z) => x + y + z;
+
+// sumar(numeros[0],numeros[1],numeros[2] ); // <- Así sería la operación sin **rest**
+
+console.log(sumar(...numeros)); // 6
+
+```
+
 
 ## **Funciones**
 ---
@@ -463,7 +524,8 @@ const sumar = (a, b) => {
 
 console.log(sumar(1,1)); // 8
 ```
-Tunear un valor por defecto es posible, look at this ⬇⇓↓⇩▼
+Tunear un valor por defecto es posible, *look at this* ⬇
+
 ```
 const incrementar = (num, valor = 1) => num + valor;
 
@@ -491,10 +553,10 @@ console.log(a); // En esta línea el valor de "a" es 5
 ```
 ## **Template literal**
 ---
-
+Ejemplo:
 ```
 let name = "Quim";
-alert( `Hola ${"name"}`); // Hola Quim
+alert( `Hola, tu nombre es ${"name"}.`); // Hola, tu nombre es Quim.
 ```
 
 ## **Convertir a STRING o NUMBER**
