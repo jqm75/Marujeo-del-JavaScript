@@ -330,6 +330,8 @@ console.log( 'Sum: ' + sum );
 ---
 Estructura de datos que nos permite almacenar múltiples valores en una misma estructura. Parecido a una lista. Se separa con `,` (comas)
 
+Web de consulta: [link](https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array)
+
 ```
 const miArray = [ 'Laia', 4 ];
 console.log(miArray); // [ 'Laia', 4 ]
@@ -348,7 +350,7 @@ const unNombre = [[], []];
 ```
 ```
 const listaEstudiantes = [['Daniel', 95],['Carmen', 97]];
-console.log(listaEstudiantes)
+console.log(listaEstu)
 ```
 ## **Arrays**
 ---
