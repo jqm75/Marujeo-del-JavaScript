@@ -403,7 +403,7 @@ saludar(); // "¡Hola Quim!"
 ```
 Para crear una *arrow function*, primero quitamos la palabra `function` y como esta función únicamente tiene un parámetro, podemos obviar los `()` y colocar la constante `nombre` seguida del símbolo de la `a.f`, que es este, `=>`.
 
-🚨 Si la `a.f` ocupa solo una línea, esta ya lleva implícito el `return`, por lo que no haría falta escribirlo. También podemos omitir las `{ }`
+🚨 Si la `a.f` ocupa solo una línea, esta ya lleva implícito el `return`, por lo que no haría falta escribirlo. También podemos omitir las `{ }`.
 
 ```
 const saludar = nombre => console.log(`¡Hola ${nombre}!`);
@@ -413,7 +413,7 @@ saludar('Quim') // "¡Hola Quim!"
 
 ```
 const sumar = function (a,b){
-  return a+b;  
+  return a + b;  
 }
 
 console.log(sumar(5,5)); // 10
@@ -422,9 +422,52 @@ Y aquí tenemos lo mismo con una `arrow function`
 La función tiene dos parámetros, y en este caso sí que debemos poner `()`, seguido de `=>` y la instrucción. Tampoco necesita `return` ni `{ }`.
 
 ```
-const sumar = (a,b) => a+b;
+const sumar = (a,b) => a + b;
 
 console.log(sumar(5,5)); // 10
+```
+🚨 Con las funciones de flecha no hay vinculación de `this`. Haría referencia a `Window` 
+
+Más ejemplos...
+
+```
+const concatenarArrays = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+
+console.log(concatenarArrays([1, 2], [3, 4, 5])); // [ 1, 2, 3, 4, 5 ]
+```
+Versión `a.f`
+```
+const concatenarArrays = (arr1, arr2) => arr1.concat(arr2);
+
+console.log(concatenarArrays([1, 2], [3, 4, 5])); // [ 1, 2, 3, 4, 5 ]
+```
+
+Y cuando la función ocupa varias líneas funciona de la siguiente manera:
+```
+const sumar = function(a, b) {
+  let num = 6;
+  return a + b + num;
+}
+
+console.log(sumar(1,1)); // 8
+
+```
+En `a.f`.
+```
+const sumar = (a, b) => {
+  let num = 6;
+  return a + b + num;
+}
+
+console.log(sumar(1,1)); // 8
+```
+Tunear un valor por defecto es posible, look at this ⬇⇓↓⇩▼
+```
+const incrementar = (num, valor = 1) => num + valor;
+
+console.log(incrementar(5, 3)); // <- Aquí le pasamos el valor 3, como nuevo valor (que era 1) y el resultado es 8
 ```
 ## **Window**
 ---
