@@ -350,8 +350,29 @@ const unNombre = [[], []];
 ```
 ```
 const listaEstudiantes = [['Daniel', 95],['Carmen', 97]];
-console.log(listaEstudiantes)
+console.log(listaEstudiantes) // [ [ 'Daniel', 95 ], [ 'Carmen', 97 ] ]
 ```
+### Cambiar el valor de un Array
+
+Para cambiar un valor dentro de una **array** se hace como si de una variable se tratára.
+
+```
+const miArray = [ 10, 20, 30 ];
+miArray[1] = 'Hola'; // <- Le damos el valor 'Hola' a la posición 1, que de inicio tenía 20.
+
+console.log(miArray); // [ 10, 'Hola', 30 ]
+```
+Y podemos anidar Arrays en una posición.
+
+```
+const miArray = [ 10, 20, 30 ];
+miArray[1] = [1, 2, 3];
+
+console.log(miArray); // [ 10, [ 1, 2, 3 ], 30 ]
+```
+### Acceso a Arrays multidimensionales (anidados)
+
+
 ## **Objetos**
 ---
 ## **Operador Rest y Spread**
