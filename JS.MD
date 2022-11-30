@@ -29,7 +29,7 @@
 
 ## **Variables**
 ---
-    
+
 Las variables son cajas, contenedores donde guardar datos y se pueden cambiar por otros. Es quiere decir que es **mutable**.
 Básicamente hay de dos tipos: `let` y `const`. También existe `var`, que hay que evitar.
 
@@ -350,9 +350,9 @@ const unNombre = [[], []];
 ```
 ```
 const listaEstudiantes = [['Daniel', 95],['Carmen', 97]];
-console.log(listaEstu)
+console.log(listaEstudiantes)
 ```
-## **Arrays**
+## **Objetos**
 ---
 ## **Operador Rest y Spread**
 ---
