@@ -14,11 +14,13 @@
   - [**for of**](#for-of)
   - [**for in**](#for-in)
   - [**break**](#break)
-  - [**Arrays**](#array)
+  - [**Arrays**](#arrays)
+  - [**Métodos de Array**](#metodos-de-array)
   - [**Objetos**](#objetos)
   - [**Operador Rest y Spread**](#operador-rest-y-spread)
   - [**Funciones**](#funciones)
   - [**Arrow Fuctions**](#arrow-functions)
+  - [**Condicionales**](#condicionales)
   - [**Window**](#window)
   - [**Template literal**](#template-literal)
   - [**Convertir a STRING o NUMBER**](#convertir-a-string-o-number)
@@ -330,8 +332,7 @@ console.log( 'Sum: ' + sum );
 ---
 Estructura de datos que nos permite almacenar múltiples valores en una misma estructura. Parecido a una lista. Se separa con `,` (comas)
 
-Chuleta JavaScript - Array [link](https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array) ← *Click derecho - Abrir vínculo en una pestaña nueva.*
-<https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array>
+Chuleta JavaScript - Array [link](https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array) ← 🖱 *Click derecho - Abrir vínculo en una pestaña nueva.*
 
 ```
 const miArray = [ 'Laia', 4 ];
@@ -367,12 +368,33 @@ Y podemos anidar Arrays en una posición.
 
 ```
 const miArray = [ 10, 20, 30 ];
-miArray[1] = [1, 2, 3];
+miArray[1] = [ 1, 2, 3 ];
 
 console.log(miArray); // [ 10, [ 1, 2, 3 ], 30 ]
 ```
 ### Acceso a Arrays multidimensionales (anidados)
+Arrays que contienen otros Arrays.
+```
+const miArray = [ [ 1, 2, 3 ],[4, 5, 6 ], [7, 8, 9 ] ];
 
+/*
+Array           [ [ 1, 2, 3 ],[4, 5, 6 ], [7, 8, 9 ] ]
+Índices:               0          1           2
+Índice internos:    0  1  2    0  1  2     0  1  2
+*/
+
+console.log(miArray[1]); // [ 4, 5, 6 ]
+
+/* Para acceder al número 6 del Array en el índice 1 
+o a la posición 0 del índice 2
+*/
+
+console.log(miArrego[1][2]); // 6
+console.log(miArrego[2][0]); // 7
+```
+
+## Métodos de Array
+---
 
 ## **Objetos**
 ---
