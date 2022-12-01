@@ -330,7 +330,8 @@ console.log( 'Sum: ' + sum );
 ---
 Estructura de datos que nos permite almacenar múltiples valores en una misma estructura. Parecido a una lista. Se separa con `,` (comas)
 
-Chuleta JavaScript - Array [link](https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array){:target="_blank"}
+Chuleta JavaScript - Array [link](https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array) ← *Click derecho - Abrir vínculo en una pestaña nueva.*
+<https://www.tutorialesprogramacionya.com/herramientas/chuletajs/chuletamasejemplo.html#array>
 
 ```
 const miArray = [ 'Laia', 4 ];
