@@ -26,9 +26,6 @@
   - [**Convertir a STRING o NUMBER**](#convertir-a-string-o-number)
 ---
 
-
-
-
 ## **Variables**
 ---
 
@@ -395,6 +392,95 @@ console.log(miArrego[2][0]); // 7
 
 ## Métodos de Array
 ---
+**PUSH** → Añade uno o más elementos **al final** del array y retorna el número de elementos del array.
+```
+const array1 = ['chirimoyas', 'manzanas', 'peras', 'sandias']
+array1.push('naranjas')
+console.log(array1) // [ 'chirimoyas', 'manzanas', 'peras', 'sandias', 'naranjas' ]
+
+array1.push('limones', 'ciruelas')
+console.log(array1) // [ 'chirimoyas', 'manzanas', 'peras', 'sandias', 'naranjas', 'limones', 'ciruelas' ]
+
+const tamano = array1.push('kiwis') // OJO AQUÍ. 
+console.log(tamano) // 8
+
+const array2 = [1, 2, 3, 4, 5]
+array2.push(10)
+console.log(array2) // [ 1, 2, 3, 4, 5, 10 ]
+```
+**POP** → Elimina el último elemento del array y lo retorna. Si el array esta vacío luego retorna undefined.
+```
+const miArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const ultimo = miArray.pop()
+console.log(ultimo) // 10
+console.log(miArray) // [1,2,3,4,5,6,7,8,9]
+console.log(miArray.pop()) // 9 
+console.log(miArray.length) // 8 
+```
+**SHIFT** → Elimina el primer elemento del array y lo retorna. Si el array esta vacío luego retorna undefined.
+
+```
+let fruits = ["Apple", "Orange", "Pear"];
+
+let firstFruit = fruits.shift(); // Apple
+
+console.log( fruits ); // Orange, Pear
+```
+
+**UNSHIFT** → Añade uno o más elementos al inicio del array y retorna el número de elementos del array.
+```
+const myArray = [1, 2, 3]
+myArray.unshift(10, 20, 30)
+console.log(myArray) // [10,20,30,1,2,3]
+
+const cantElementos = myArray.unshift(100)
+console.log(cantElementos) // 7
+console.log(myArray) // [100,10,20,30,1,2,3]
+```
+**FIND** → Retorna el primer elemento del array que cumpla con la condición de la función que se pasa como parámetro.
+
+```
+const frutas = [{
+    nombre: 'Manzana',
+    calorias: 68,
+}, {
+    nombre: 'Pera',
+    calorias: 57,
+}, {
+    nombre: 'Sandia',
+    calorias: 30,
+}, {
+    nombre: 'Melon',
+    calorias: 36,
+}, {
+    nombre: 'Chirimoya',
+    calorias: 40,
+}, {
+    nombre: 'Naranja',
+    calorias: 40,
+}]
+console.log(frutas.find(fruta => fruta.nombre === 'Manzana')) // {nombre: 'Manzana', calorias: 68}
+console.log(frutas.find(fruta => fruta.calorias === 40)) // {nombre: 'Chirimoya', calorias: 40}
+```
+**FOREACH** → Otra vez. Ejecuta la función para cada elemento del array en forma ascendente. La función recibe el valor, el índice y el arreglo.
+
+```
+const colores=["rojo","verde","azul"]
+colores.forEach((elemento,indice,array)=>{
+    console.log(elemento,indice,array)
+})
+colores.forEach(elemento=>{
+    console.log(elemento) // "rojo" "verde" "azul"
+})
+colores.forEach((elemento,indice,array)=>{
+    array[indice]="amarillo"
+})
+console.log(colores) // ["amarillo", "amarillo", "amarillo"]
+```
+**MAP** → **Retorna un nuevo array** con los resultados de aplicar la función que se pasa como parámetro a cada elemento del array.
+```
+
+```
 
 ## **Objetos**
 ---
