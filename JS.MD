@@ -654,7 +654,7 @@ miContador.valor() // 1
 ```
 ## **Asincronías**
 NO LO ENTIENDO
-
+Método antiguo
 ```
 const datos = [{
   id: 1,
@@ -695,7 +695,48 @@ Después de 1,5seg devuelve esto:
 ]
 */  
 ```
+Método moderno. Con `ASYNC AWAIT`
 
+```
+const datos = [{
+  id: 1,
+  title: 'Iron Man',
+  year: 2008
+}, {
+  id: 2,
+  title: 'Spiderman',
+  year: 2017
+}, {
+  id: 3,
+  title: 'Avengers: Endgame',
+  year: 2019
+}]
+
+const getDatos = () => {
+  return new Promise ((resolve, reject) => {
+      setTimeout (() => {
+        resolve (datos)
+  }, 1500) // Tiempo de retardo que le damos a la funcion con setTimeout para simular un retraso de tiempo. En milisegundos.
+  })
+}
+
+async function fetchingData () {
+  const datosFetched = await getDatos()
+  onsole.log(datosFetched)
+}
+
+fetchingData()
+
+
+/*
+Después de 1,5seg devuelve esto:
+[
+  { id: 1, title: 'Iron Man', year: 2008 },
+  { id: 2, title: 'Spiderman', year: 2017 },
+  { id: 3, title: 'Avengers: Endgame', year: 2019 }
+]
+*/  
+```
 ## **Arrow Functions**
 ---
 Las *arrow functions* permiten simplificar las funciones mejorando su expresividad.
