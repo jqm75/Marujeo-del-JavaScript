@@ -19,6 +19,8 @@
   - [**Objetos**](#objetos)
   - [**Operador Rest y Spread**](#operador-rest-y-spread)
   - [**Funciones**](#funciones)
+  - [**Clousure**](#clousure)
+  - [**Asincronías**](#asincronias)
   - [**Arrow Fuctions**](#arrow-functions)
   - [**Condicionales**](#condicionales)
   - [**Window**](#window)
@@ -524,6 +526,8 @@ console.log(sumar(...numeros)); // 6
 ---
 `function` *nombreDeLaFuncion* seguido de `()`. Y entre las *curly braces* `{ }` pondremos las **instrucciones**.
 
+Un a función es JavaScript es un OBJETO, de hecho, TODO en JS es un OBJETO y podemos acceder a ellos como tal.
+
 ```
 function sayHi() {
   console.log('Hello!')
@@ -581,6 +585,117 @@ function average(){
 const averageResult = average()
 averageResult // 4
 ```
+
+Para llamar a una **función anidada**, se usa el doble `()()`, de lo contrario no devuelve el valor que hay dentro.
+
+```
+const a ='¡Hey! '
+function global() {
+  const b = '¿Qué'
+  
+  function local() {
+    const c = ' tal?'
+    return a + b + c
+  }
+  
+  return local
+}
+
+global()() // '¡Hey! ¿Qué tal?'
+```
+
+## Clousure
+
+Un **clousure** es una función autoejecutable que encpasula un serie de variables y deficiones locales que únicamente serán accesible si son devueltas con el operador `return`. Esto permite tener, en cierto modo, *variables privadas*. O mejor dicho, menos accesibles desde fuera. Se usa cada vez menos desde la llegada de ES6 (ECMAScript v6)
+Se usa con guión bajo `_abc` por convención. Hace referencia a la variable que no es accesible desde fuera.
+```
+const miContador = function(){
+  let _contador = 0
+  
+  function incrementar() {
+    return _contador++
+  }
+  function decrementar() {
+    return _contador--
+  }
+  function valor(){
+    return _contador
+  }
+}
+```
+Para que funcione esto hay que englobar la función principal `miContador ` entre `()`, y para que se ejecute, colocamos otro juego de  `()` al final.
+
+```
+const miContador = (function(){
+  let _contador = 0
+  
+  function incrementar() {
+    return _contador++
+  }
+  
+  function decrementar() {
+    return _contador--
+  }
+  
+  function valor(){
+    return _contador
+  }
+  
+  return {
+  incrementar,
+  decrementar,
+  valor
+}
+})()
+
+miContador.valor() // 0
+miContador.incrementar() //0
+miContador.valor() // 1
+```
+## **Asincronías**
+NO LO ENTIENDO
+
+```
+const datos = [{
+  id: 1,
+  title: 'Iron Man',
+  year: 2008
+}, {
+  id: 2,
+  title: 'Spiderman',
+  year: 2017
+}, {
+  id: 3,
+  title: 'Avengers: Endgame',
+  year: 2019
+}]
+
+//const getDatos = () => {
+//return datos
+//}
+const getDatos = () => {
+  return new Promise ((resolve, reject) => {
+      setTimeout (() => {
+        resolve (datos)
+  }, 1500) // Tiempo de retardo que le damos a la funcion con setTimeout para simular un retraso de tiempo.
+  })
+}
+
+getDatos()
+  .then((datos) => console.log(datos))
+
+
+
+/*
+Después de 1,5seg devuelve esto:
+[
+  { id: 1, title: 'Iron Man', year: 2008 },
+  { id: 2, title: 'Spiderman', year: 2017 },
+  { id: 3, title: 'Avengers: Endgame', year: 2019 }
+]
+*/  
+```
+
 ## **Arrow Functions**
 ---
 Las *arrow functions* permiten simplificar las funciones mejorando su expresividad.
