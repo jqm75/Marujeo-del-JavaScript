@@ -677,7 +677,7 @@ const getDatos = () => {
   return new Promise ((resolve, reject) => {
       setTimeout (() => {
         resolve (datos)
-  }, 1500) // Tiempo de retardo que le damos a la funcion con setTimeout para simular un retraso de tiempo.
+  }, 1500) // Tiempo de retardo que le damos a la funcion con setTimeout para simular un retraso de tiempo. En milisegundos.
   })
 }
 
