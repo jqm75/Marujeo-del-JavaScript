@@ -641,9 +641,9 @@ function global() {
 global()() // '¡Hey! ¿Qué tal?'
 ```
 
-## Clousure
+## **Clousure**
 
-Un **clousure** es una función autoejecutable que encpasula un serie de variables y deficiones locales que únicamente serán accesible si son devueltas con el operador `return`. Esto permite tener, en cierto modo, *variables privadas*. O mejor dicho, menos accesibles desde fuera. Se usa cada vez menos desde la llegada de ES6 (ECMAScript v6)
+Un **clousure** es una función autoejecutable que encapsula una serie de variables y deficiones locales que únicamente serán accesibles si son devueltas con el operador `return`. Esto permite tener, en cierto modo, *variables privadas*. O mejor dicho, menos accesibles desde fuera. Se usa cada vez menos desde la llegada de ES6 (ECMAScript v6)
 Se usa con guión bajo `_abc` por convención. Hace referencia a la variable que no es accesible desde fuera.
 ```js
 const miContador = function(){
@@ -690,7 +690,9 @@ miContador.incrementar() //0
 miContador.valor() // 1
 ```
 ## **Asincronías**
-NO LO ENTIENDO
+
+DE MOMENTO NO LO ENTIENDO.
+
 Método antiguo
 ```js
 const datos = [{
