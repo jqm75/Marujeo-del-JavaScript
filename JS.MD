@@ -695,19 +695,23 @@ DE MOMENTO NO LO ENTIENDO.
 
 Método antiguo
 ```js
-const datos = [{
-  id: 1,
-  title: 'Iron Man',
-  year: 2008
-}, {
-  id: 2,
-  title: 'Spiderman',
-  year: 2017
-}, {
-  id: 3,
-  title: 'Avengers: Endgame',
-  year: 2019
-}]
+const datos = [
+  {
+    id: 1,
+    title: 'Iron Man',
+    year: 2008
+  },
+  {
+    id: 2,
+    title: 'Spiderman',
+    year: 2017
+  },
+  {
+    id: 3,
+    title: 'Avengers: Endgame',
+    year: 2019
+  }
+]
 
 //const getDatos = () => {
 //return datos
@@ -737,19 +741,23 @@ Después de 1,5seg devuelve esto:
 Método moderno. Con `ASYNC AWAIT`
 
 ```js
-const datos = [{
-  id: 1,
-  title: 'Iron Man',
-  year: 2008
-}, {
-  id: 2,
-  title: 'Spiderman',
-  year: 2017
-}, {
-  id: 3,
-  title: 'Avengers: Endgame',
-  year: 2019
-}]
+const datos = [
+  {
+    id: 1,
+    title: 'Iron Man',
+    year: 2008
+  },
+  {
+    id: 2,
+    title: 'Spiderman',
+    year: 2017
+  },
+  {
+    id: 3,
+    title: 'Avengers: Endgame',
+    year: 2019
+  }
+]
 
 const getDatos = () => {
   return new Promise ((resolve, reject) => {
@@ -775,6 +783,42 @@ Después de 1,5seg devuelve esto:
   { id: 3, title: 'Avengers: Endgame', year: 2019 }
 ]
 */  
+```
+Y lo mismo, pero imprimiendo los objetos por separado, uno a uno.
+
+```js
+const datos = [
+  {
+    id: 1,
+    title: 'Iron Man',
+    year: 2008
+  },
+  {
+    id: 2,
+    title: 'Spiderman',
+    year: 2017
+  },
+  {
+    id: 3,
+    title: 'Avengers: Endgame',
+    year: 2019
+  }
+]
+
+const getDatos = (i) => {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(datos[i])
+      }, 1500) // Tiempo de retardo que le damos a la funcion con setTimeout para simular un retraso de tiempo. En milisegundos.
+  })
+}
+
+(async () => {
+  for (let i = 0; i < datos.length; i++) {
+
+    console.log(await getDatos(i));
+  }
+})()
 ```
 ## **Arrow Functions**
 ---
