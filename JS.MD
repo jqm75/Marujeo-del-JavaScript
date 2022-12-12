@@ -15,12 +15,12 @@
   - [**for in**](#for-in)
   - [**break**](#break)
   - [**Arrays**](#arrays)
-  - [**Métodos de Array**](#metodos-de-array)
+  - [**Métodos de Array**](#métodos-de-array)
   - [**Objetos**](#objetos)
   - [**Operador Rest y Spread**](#operador-rest-y-spread)
   - [**Funciones**](#funciones)
   - [**Clousure**](#clousure)
-  - [**Asincronías**](#asincronias)
+  - [**Asincronías**](#asincronías)
   - [**Arrow Fuctions**](#arrow-functions)
   - [**Condicionales**](#condicionales)
   - [**Window**](#window)
@@ -519,7 +519,18 @@ console.log(raizCuadrada); // [1, 2, 3]
 console.log(numeros); // [1, 4, 9]
 ```
 
+Otro ejemplo: Esto añade el sufijo *man* a cada *prefijo*
 
+```js
+let prefijos = ["super", "spider", "ant", "iron"]
+let sufijo = "man";
+
+let nombresCompletos = prefijos.map(prefijo => prefijo + sufijo);
+
+console.log(nombresCompletos);
+
+// ["superman", "spiderman", "antman", "ironman"]
+```
 
 ## **Objetos**
 ---
