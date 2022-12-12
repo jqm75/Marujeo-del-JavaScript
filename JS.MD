@@ -392,7 +392,7 @@ console.log(miArrego[1][2]); // 6
 console.log(miArrego[2][0]); // 7
 ```
 
-## Métodos de Array
+## **Métodos de Array**
 ---
 **PUSH** → Añade uno o más elementos **al final** del array y retorna el número de elementos del array.
 ```js
@@ -901,5 +901,4 @@ Los string "afectados" por un operador lógico serán convertidos a números.
 ```js
 alert( "6" / "2" ); // 3, los strings son convertidos a números
 ```
-
 ##
