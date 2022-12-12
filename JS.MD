@@ -702,7 +702,7 @@ miContador.valor() // 1
 ```
 ## **Asincronías**
 
-DE MOMENTO NO LO ENTIENDO.
+DE MOMENTO NO LO ENTIENDO 😅
 
 Método antiguo
 ```js
