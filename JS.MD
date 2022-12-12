@@ -490,6 +490,36 @@ SINTAXIS
 ```js
 arr.map(callback(element, index, array));
 ```
+```js
+const numbers = [1, 5, 10, 15];
+const resultMultiplyTwo = numbers.map(function(num) {
+   return num * 2;
+});
+
+console.log(resultMultiplyTwo)// [2, 10, 20, 30]
+console.log(numbers) // [1, 5, 10, 15]
+```
+
+```js
+const numeros = [1, 4, 9];
+const raizCuadrada = numeros.map(function(num) {
+    return Math.sqrt(num);
+});
+// raizCuadrada es ahora [1, 2, 3]
+// numeros siguen siendo [1, 4, 9]
+```
+
+O así, con `arrow function`
+
+```js
+const numeros = [1, 4, 9];
+const raizCuadrada = numeros.map((num) => Math.sqrt(num));
+
+console.log(raizCuadrada); // [1, 2, 3]
+console.log(numeros); // [1, 4, 9]
+```
+
+
 
 ## **Objetos**
 ---
