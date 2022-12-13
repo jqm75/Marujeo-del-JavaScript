@@ -534,6 +534,39 @@ console.log(nombresCompletos);
 
 ## **Objetos**
 ---
+En JavaScript todo on objetos.
+
+ ```js
+let annualSalary = 30000
+let months = 12
+
+function getSalary (annualSalary, months) {
+    return annualSalary / months
+    
+}
+
+console.log(getSalary(annualSalary, months)) // 2500
+
+// Recordatorio: Hace referencia a las variables. No tiene que coindicir con los nombre de los parámatros de la función.
+
+ ```
+
+Ejemplo de implementación OOP
+
+```js
+let employee = {
+    annualSalary: 30000,
+    months: 12,
+    getSalary: function getSalary () {
+        return this.annualSalary / this.months
+    }
+}
+```
+
+
+
+
+
 ## **Operador Rest y Spread**
 ---
 
@@ -701,8 +734,6 @@ miContador.incrementar() //0
 miContador.valor() // 1
 ```
 ## **Asincronías**
-
-DE MOMENTO NO LO ENTIENDO 😅
 
 ### Cargar un SCRIPT externo.
 
@@ -899,10 +930,6 @@ async function requestHandler(req, res) {
 
 }
 ```
-
-
-
-
 
 ## **Arrow Functions**
 ---
