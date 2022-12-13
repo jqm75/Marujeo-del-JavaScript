@@ -794,7 +794,7 @@ Después de 1,5seg devuelve esto:
 ]
 */  
 ```
-Método moderno. Con `ASYNC AWAIT`
+Método moderno. Con `ASYNC AWAIT`. Es el más sencillo y utilizado en lugar de la promesas.
 
 ```js
 const datos = [
@@ -876,6 +876,34 @@ const getDatos = (i) => {
   }
 })()
 ```
+Otro ejemplo ASYNC AWAIT (simulando consulta en **MongoDB**)
+
+```js
+async function requestHandler(req, res) {
+  
+  try { // Intenta esto esto, y si no...(catch)
+
+    const user = await User.findById(req.userId);
+    const tasks = await Tasks.findById(user.tasksId);
+    tasks.completed = true;
+    await tasks.save();
+    res.send('Task completed');
+
+  }
+
+  catch(err) { // Y si no... muestra el error
+
+    res.send(err);
+
+  }
+
+}
+```
+
+
+
+
+
 ## **Arrow Functions**
 ---
 Las *arrow functions* permiten simplificar las funciones mejorando su expresividad.
@@ -961,7 +989,7 @@ console.log(incrementar(5, 3)); // <- Aquí le pasamos el valor 3, como nuevo va
 
 ### THEN y CATCH
 
-Un objeto Promise sirve como enlace entre el ejecutor y las funciones consumidoras, que recibirán un resultado o un error. Las funciones de consumo pueden registrarse utilizando los métodos `.then` y `.catch`. La llamada `.catch(f)` es un análogo completo de `.then(null, f)`, es solo una abreviatura.
+Un objeto Promise sirve como enlace entre el ejecutor y las funciones consumidoras, que recibirán un resultado o un error. Las funciones de consumo pueden registrarse utilizando los métodos `.then` y `.catch`. La llamada `.catch(f)` es un análogo completo de `.then(null, f)`, es solo una abreviatura, se usa habitualmente para llamar al *Mensaje de Error*
 
 SINTAXIS
 
