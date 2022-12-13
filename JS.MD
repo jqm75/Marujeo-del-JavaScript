@@ -557,7 +557,7 @@ const miFuncion = (...args) => console.log(args);
 miFuncion(1, 2, 3, 4);  // [1, 2, 3, 4]
 
 ```
-Si lo declaramos en la función, realiza acciones dentro del array. Y los descompone el array en sus elementos individuales y asignarlos en orden a los parámetros. Aplicado asó este operador se llama **Spread**
+Si lo declaramos en la función, realiza acciones dentro del array. Y descompone el array en sus elementos individuales y asignarlos en orden a los parámetros. Aplicado así este operador se llama **Spread**
 ```js
 const numeros = [1, 2, 3];
 
@@ -704,7 +704,52 @@ miContador.valor() // 1
 
 DE MOMENTO NO LO ENTIENDO 😅
 
+### Cargar un SCRIPT externo.
+
+La función `loadScript(src)`, que carga un código script `src` dado.
+
+Esto se llama *programación asincrónica “basado en callback”*. Una función que hace algo de forma asincrónica debería aceptar un argumento de callback donde ponemos la función por ejecutar después de que se complete.
+
+```js
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+  script.onload = () => callback(script);
+  document.head.append(script);
+}
+
+loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script => {
+  alert(`Genial, el script ${script.src} está cargado`);
+  alert( _ ); // _ es una función declarada en el script cargado
+});
+```
+
+Ejemplo mejorado de `loadScript` con función de validación.
+Para una carga exitosa llama a `callback(null, script)` y de lo contrario a `callback(error)`.
+
+```js
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () => callback(null, script);
+  script.onerror = () => callback(new Error(`Error de carga de script con ${src}`));
+
+  document.head.append(script);
+}
+```
+### RESOLVE y REJECT
+
+Los argumentos **resolve** y **reject** son *callbacks* proporcionadas por el propio JavaScript. Nuestro código solo está dentro del ejecutor.
+
+Cuando el ejecutor, más tarde o más temprano, eso no importa, obtiene el resultado, debe llamar a una de estos callbacks:
+
+- `resolve(value)` → Si el trabajo finalizó con éxito, con el resultado `value`.
+
+- `reject(error)` → Si ocurrió un error, error es el objeto `error`.
+
 Método antiguo
+
 ```js
 const datos = [
   {
@@ -913,6 +958,37 @@ const incrementar = (num, valor = 1) => num + valor;
 
 console.log(incrementar(5, 3)); // <- Aquí le pasamos el valor 3, como nuevo valor (que era 1) y el resultado es 8
 ```
+
+### THEN y CATCH
+
+Un objeto Promise sirve como enlace entre el ejecutor y las funciones consumidoras, que recibirán un resultado o un error. Las funciones de consumo pueden registrarse utilizando los métodos `.then` y `.catch`. La llamada `.catch(f)` es un análogo completo de `.then(null, f)`, es solo una abreviatura.
+
+SINTAXIS
+
+```js
+promise.then(
+  function(result) { /* manejar un resultado exitoso */ },
+  function(error) { /* manejar un error */ }
+);
+```
+
+El primer argumento de `.then` es una función que se ejecuta cuando se resuelve la promesa y recibe el resultado.
+
+El segundo argumento de `.then` es una función que se ejecuta cuando se rechaza la promesa y recibe el error.
+
+Por ejemplo, aquí hay una reacción a una promesa resuelta con éxito:
+```js
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve("hecho!"), 1000);
+});
+
+// resolve ejecuta la primera función en .then
+promise.then(
+  result => alert(result), // muestra "hecho!" después de 1 segundo
+  error => alert(error) // no se ejecuta
+);
+```
+
 ## **Window**
 ---
 Podemos utilizar el **objeto especial** `Window` para acceder directamente al ámbito global del DOM independientemente de donde nos encontremos. Esto ocurre así porque las variables globales se almacenan dentro del objeto Window, es la ventana del navegador web.
