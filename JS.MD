@@ -388,8 +388,8 @@ console.log(miArray[1]); // [ 4, 5, 6 ]
 o a la posición 0 del índice 2
 */
 
-console.log(miArrego[1][2]); // 6
-console.log(miArrego[2][0]); // 7
+console.log(miArray[1][2]); // 6
+console.log(miArray[2][0]); // 7
 ```
 
 ## **Métodos de Array**
