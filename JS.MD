@@ -908,7 +908,7 @@ console.log(sumar(1,1)); // 8
 ```
 Tunear un valor por defecto es posible, *look at this* ⬇
 
-```
+```js
 const incrementar = (num, valor = 1) => num + valor;
 
 console.log(incrementar(5, 3)); // <- Aquí le pasamos el valor 3, como nuevo valor (que era 1) y el resultado es 8
@@ -936,7 +936,7 @@ console.log(a); // En esta línea el valor de "a" es 5
 ## **Template literal**
 ---
 Ejemplo:
-```
+```js
 let name = "Quim";
 alert( `Hola, tu nombre es ${"name"}.`); // Hola, tu nombre es Quim.
 ```
