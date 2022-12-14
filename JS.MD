@@ -562,6 +562,64 @@ let employee = {
     }
 }
 ```
+Otro ejemplo, un Objeto llamdo **person** con 4 propiedades **nombre:valor**
+
+```js
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+```
+Para acceder a la propiedades se usa **nombreObjeto.nombrePropiedad**
+```js
+person.firstName
+
+// o así
+
+person["firstName"]
+```
+`this`. Es una palabra reservada, hace referencia al objeto, **person** en el ejemplo.
+
+```js
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+console.log(person.fullName()) // "John Doe"
+```
+```js
+function myFunc () {
+    return {
+        x : 100,
+        y : 200,
+        calculate: function () {
+            console.log(this.x / this.y)
+        }
+    }
+}
+myFunc().calculate() // 0.5
+```
+Lo mismo con *Arrow Function* por practicar 😂
+
+```js
+const myFunc = () => {
+    return {
+        x : 100,
+        y : 200,
+        calculate: function () {
+            console.log(this.x / this.y)
+        }
+    }
+}
+myFunc().calculate() // 0.5
+```
 
 
 
