@@ -11,6 +11,9 @@
   - [**while**](#while)
   - [**do while**](#do-while)
   - [**forEach**](#foreach)
+  - [**some**](#some)
+  - [**find**](#find)
+  - [**findIndex**](#findindex)
   - [**for of**](#for-of)
   - [**for in**](#for-in)
   - [**break**](#break)
@@ -266,6 +269,71 @@ numeros.forEach((nombre, indice) => pasarLista(nombre, indice));
 "Está el número de estudiante 4  - Guido presente? Sí!"
 "Está el número de estudiante 5  - Eva presente? Sí!"
 */
+```
+
+## **some**
+----
+El método `some` es una alternativa a `forEach` y evitamos recorrer todo el array en busca de los resultados. Con `some` optimizamos el tiempo de ejecución y puede resultar más útil para buscar datos en un Array. `some` se para en cuanto encuentra lo que se le indica. Se para en el primer result Este método devuelve un booleano, en este caso `true`
+
+```js
+// ¿Alguna persona es mayor de edad?
+
+const personas = [
+
+  { name: 'Andrea', age: 28 },
+  { name: 'Nacho', age: 15 },
+  { name: 'Quim', age: 47 },
+  { name: 'Elionor', age: 17 }
+
+]
+
+const mayorEdad = personas.some((persona) => persona.age > 18)
+
+console.log(mayorEdad) // true
+
+```
+## **find**
+----
+El método `find` 
+
+```js
+// ¿Alguna persona es mayor de edad?
+
+const personas = [
+
+  { name: 'Andrea', age: 28 },
+  { name: 'Nacho', age: 15 },
+  { name: 'Quim', age: 47 },
+  { name: 'Elionor', age: 17 }
+
+]
+
+const mayorEdad = personas.find((persona) => persona.age > 18)
+
+console.log(mayorEdad) // 
+
+```
+
+## **findIndex**
+----
+El método `findIndex`
+
+```js
+// ¿Alguna persona es mayor de edad?
+
+const personas = [
+
+  { name: 'Andrea', age: 28 },
+  { name: 'Nacho', age: 15 },
+  { name: 'Quim', age: 47 },
+  { name: 'Elionor', age: 17 }
+
+]
+
+const mayorEdad = personas.findIndex((persona) => persona.age > 18)
+
+console.log(mayorEdad) // 
+
 ```
 ## **for of**
 ----
